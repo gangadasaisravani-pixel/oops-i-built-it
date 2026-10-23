@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catch Me If You Can — Oops, I Built It</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+    color: white;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at 15% 15%, #482080 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 85%, #173d50 0%, transparent 38%),
+        #090914;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    background-image:
+        linear-gradient(#aaa 1px, transparent 1px),
+        linear-gradient(90deg, #aaa 1px, transparent 1px);
+    background-size: 38px 38px;
+    mask-image: linear-gradient(to bottom, black, transparent);
+}
+    
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px 28px;
+    text-align: center;
+    border: 1px solid #ffffff20;
+    border-radius: 28px;
+    background: #151523cc;
+    box-shadow: 0 25px 100px #0008;
+    backdrop-filter: blur(15px);
+}
+
+
+
+.topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    color: #c4b5fd;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.badge {
+    padding: 8px 12px;
+    border: 1px solid #bef26455;
+    border-radius: 30px;
+    color: #bef264;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 20px 0 10px;
+    font-size: clamp(37px, 7vw, 70px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    font-weight: 900;
+}
+
+h1 span {
+    display: block;
+    margin-top: 10px;
+    color: #b69aff;
+    text-shadow: 0 0 35px #8b5cf655;
+}
+
+.subtitle {
+    color: #b6b6cc;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.arena {
+    position: relative;
+    height: 300px;
+    margin-top: 28px;
+    overflow: hidden;
+    border: 1px solid #ffffff15;
+    border-radius: 20px;
+    background:
+        radial-gradient(ellipse at center, #8b5cf61c, transparent 70%),
+        #0c0c18;
+}
+
+.arena-label {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    right: 0;
+    color: #77778f;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+#runaway {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    padding: 15px 22px;
+    border: 1px solid #ffffff60;
+    border-radius: 13px;
+    color: #100d1b;
+    background: linear-gradient(135deg, #d4ff82, #a3e635);
+    box-shadow: 0 0 25px #a3e63555;
+    font-size: 14px;
+    font-weight: 900;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: left 0.13s ease, top 0.13s ease;
+}
+
+#runaway:hover {
+    box-shadow: 0 0 38px #a3e39999;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.stat {
+    padding: 15px;
+    border: 1px solid #ffffff12;
+    border-radius: 15px;
+    background: #ffffff06;
+}
+
+.stat-label {
+    color: #8d8da6;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.stat-value {
+    margin-top: 7px;
+    color: #c4b5fd;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+#message {
+    min-height: 22px;
+    margin-top: 22px;
+    color: #bef264;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    color: #77778f;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .arena {
+        height: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+    <div class="topline">
+        <div class="brand">OOPS, I BUILT IT.</div>
+        <div class="badge">● EXPERIMENT 001</div>
+    </div>
+
+    <h1>
+        CATCH ME
+        <span>IF YOU CAN.</span>
+    </h1>
+
+    <p class="subtitle">
+        I created a button with trust issues.<br>
+        Good luck trying to catch it.
+    </p>
+
+    <div class="arena" id="arena">
+        <div class="arena-label">THE ESCAPE ZONE</div>
+        <button id="runaway">CATCH ME ↗</button>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-label">FAILED CATCHES</div>
+            <div class="stat-value" id="count">00</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-label">BUTTON STATUS</div>
+            <div class="stat-value" id="status">FREE 😈</div>
+        </div>
+    </div>
+
+    <div id="message">SYSTEM READY. TRY YOUR LUCK.</div>
+
+    <div class="bottom">
+        <span>MADE WITH CURIOSITY</span>
+        <span>DAY 01 / 30</span>
+    </div>
+
+</main>
+
+<script>
+const button = document.getElementById("runaway");
+const arena = document.getElementById("arena");
+const count = document.getElementById("count");
+const status = document.getElementById("status");
+const message = document.getElementById("message");
+
+let attempts = 0;
+
+const reactions = [
+    "NICE TRY. 😈",
+    "TOO SLOW!",
+    "NOT TODAY, BESTIE.",
+    "ACCESS DENIED.",
+    "CATCH ME FIRST!",
+    "YOUR MOUSE NEEDS TRAINING.",
+    "I'M BUILT DIFFERENT."
+];
+
+function escapeButton() {
+    const maxX = arena.clientWidth - button.offsetWidth - 12;
+    const maxY = arena.clientHeight - button.offsetHeight - 12;
+
+    if (maxX < 12 || maxY < 12) return;
+
+    const x = 12 + Math.random() * (maxX - 12);
+    const y = 35 + Math.random() *
+        Math.max(1, maxY - 35);
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+    button.style.transform = "none";
+
+    attempts++;
+
+    count.textContent = String(attempts).padStart(2, "0");
+
+    status.textContent = attempts >= 10 ? "CHAOS 🔥" : "FREE 😈";
+
+    message.textContent =
+        reactions[Math.floor(Math.random() * reactions.length)];
+}
+
+button.addEventListener("mouseenter", escapeButton);
+    button.addEventListener("touchstart", function(event) {
+    event.preventDefault();
+    escapeButton();
+    }, { passive: false });
+button.addEventListener("click", function() {
+    message.textContent = "⚡ SYSTEM OVERRIDE... NICE TRY!";
+    button.textContent = "YOU CAUGHT ME?";
+    status.textContent = "GLITCH ⚡";
+
+    button.style.left = "50%";
+    button.style.top = "58%";
+    button.style.transform = "translate(-50%, -50%)";
+
+    setTimeout(function() {
+        button.textContent = "CATCH ME ↗";
+        message.textContent = "PLOT TWIST! I'M STILL FREE. 😈";
+        escapeButton();
+    }, 1200);
+});
+
+</script>
+
+</body>
+</html>
