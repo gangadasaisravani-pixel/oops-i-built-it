@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oops, I Built It.</title>
+  <meta name="description" content="Little experiments. Big chaos. Explore my creative coding projects.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 30px 18px;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: radial-gradient(ellipse at top, #30204e, #0b0b14 65%);
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: #c4b5fd;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .badge {
+      border: 1px solid #bef26466;
+      border-radius: 30px;
+      padding: 9px 12px;
+      color: #bef264;
+    }
+
+    header {
+      padding: 70px 0 42px;
+    }
+
+    .eyebrow {
+      color: #bef264;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(42px, 9vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+    }
+
+    h1 span {
+      color: #b69aff;
+    }
+
+    header p {
+      max-width: 450px;
+      color: #b8b6ca;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #b8b6ca;
+    }
+
+    .project {
+      display: block;
+      margin-bottom: 14px;
+      padding: 24px;
+      border: 1px solid #ffffff20;
+      border-radius: 20px;
+      background: #ffffff08;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: #b69aff;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .day {
+      color: #bef264;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .arrow {
+      color: #b69aff;
+      font-size: 24px;
+    }
+
+    h2 {
+      margin: 16px 0 8px;
+      font-size: 23px;
+    }
+
+    .project p {
+      margin: 0;
+      color: #aaa8bd;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 17px;
+      padding: 7px 10px;
+      border-radius: 20px;
+      background: #bef26416;
+      color: #bef264;
+      font-size: 11px;
+    }
+
+    .coming {
+      border-style: dashed;
+      background: transparent;
+    }
+
+    footer {
+      margin-top: 45px;
+      padding: 22px 0;
+      border-top: 1px solid #ffffff18;
+      color: #88869e;
+      font-size: 11px;
+      line-height: 2;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="top">
+      <div>OOPS, I BUILT IT.</div>
+      <div class="badge">MY PROJECT UNIVERSE ✦</div>
+    </div>
+
+    <header>
+      <div class="eyebrow">WELCOME TO MY LITTLE CORNER OF THE INTERNET</div>
+      <h1>Little ideas.<br><span>Big chaos.</span></h1>
+      <p>
+        I build random things, experiment with code, and occasionally
+        surprise myself. Every project has a story. Come explore!
+      </p>
+    </header>
+
+    <section>
+      <h3 class="section-title">✦ EXPERIMENTS & PROJECTS</h3>
+
+      <a class="project" href="https://YOUR-RUNAWAY-LINK-HERE">
+        <div class="project-top">
+          <span class="day">DAY 01 / EXPERIMENT 001</span>
+          <span class="arrow">↗</span>
+        </div>
+        <h2>Catch Me If You Can 😈</h2>
+        <p>
+          A button with serious trust issues. Try catching it
+          if you think you can!
+        </p>
+        <span class="tag">HTML · CSS · JavaScript</span>
+      </a>
+
+      <div class="project coming">
+        <div class="project-top">
+          <span class="day">DAY 02 / COMING SOON</span>
+          <span class="arrow">✦</span>
+        </div>
+        <h2>Something chaotic is brewing...</h2>
+        <p>My next experiment will land here soon. Stay curious!</p>
+        <span class="tag">IN THE MAKING</span>
+      </div>
+    </section>
+
+    <footer>
+      BUILT WITH CURIOSITY 💜<br>
+      OOPS, I BUILT IT. · MORE EXPERIMENTS COMING SOON
+    </footer>
+  </main>
+</body>
+</html>
